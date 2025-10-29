@@ -5,6 +5,7 @@ WORKDIR /app
 # Copia os arquivos de configuração e baixa dependências
 COPY mvnw pom.xml ./
 COPY .mvn .mvn
+RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 
 # Copia o código-fonte e faz o build
